@@ -1,4 +1,4 @@
-# NicaMarket API (proyecto base)
+ NicaMarket API (proyecto base)
 
 API REST de **productos** y **categorías** para la Práctica guiada n.º 9 (Servicios Web, UAM).
 Es el punto de partida **sin seguridad** y **sin base de datos**: los datos viven en memoria
@@ -15,23 +15,16 @@ mvn spring-boot:run
 
 o abrir el proyecto en IntelliJ IDEA y ejecutar `FacturaApplication`. Servidor en `http://localhost:8080`.
 
-# NicaMarket API - Seguridad con Spring Security y JWT
+# NicaMarket API - Seguridad con Spring Security jwt
 
-API REST para la gestión de productos y categorías de Comercial NicaMarket, S. A., desarrollada como parte de la Práctica Guiada N.º 9 de la asignatura Servicios Web de la Universidad Americana (UAM).
-
-El proyecto incorpora autenticación mediante JSON Web Token (JWT) y autorización basada en roles utilizando Spring Security, con el objetivo de controlar el acceso a los recursos y restringir las operaciones de modificación a usuarios autorizados.
-
-## 1. Tecnologías utilizadas
+## 1. Tecnologías 
 
 - Java 21
 - Spring Boot 4.1.1
 - Spring Security
 - JWT (JSON Web Token)
-- Maven
 - IntelliJ IDEA
 - Postman
-
-El proyecto utiliza almacenamiento en memoria, por lo que los datos se reinician cuando se detiene la aplicación.
 
 ## 2. Funcionalidades
 
@@ -48,8 +41,6 @@ Los tokens JWT tienen una duración de 30 minutos.
 
 ## 3. Roles y permisos
 
-La aplicación dispone de dos roles:
-
 ### USER
 
 Puede consultar productos y categorías, pero no tiene autorización para crear, actualizar o eliminar registros.
@@ -62,26 +53,11 @@ Los usuarios no autenticados solamente pueden acceder al endpoint público y al 
 
 ## 4. Configuración y ejecución
 
-### Requisitos
-
-- JDK 21
-- Maven
-- IntelliJ IDEA o un IDE compatible
-- Postman para las pruebas
-
 ### Configuración de JWT
 
 Antes de ejecutar la aplicación, se debe configurar la variable de entorno:
 
 JWT_SECRET_BASE64
-
-Su valor debe ser una clave aleatoria de al menos 32 bytes codificada en Base64.
-
-En IntelliJ IDEA, esta variable se configura desde:
-
-Run > Edit Configurations > FacturaApplication > Environment variables
-
-La clave secreta no debe incluirse en el código fuente ni publicarse en GitHub.
 
 ### Ejecutar la aplicación
 
